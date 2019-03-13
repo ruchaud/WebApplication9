@@ -1,0 +1,38 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+<ul class="nav navbar-nav navbar">
+    <li>@Html.ActionLink("Estados", "Index", "Estadoes")</li>
+    <li>@Html.ActionLink("Cidades", "Index", "Cidades")</li>
+    <li>@Html.ActionLink("Bairros", "Index", "Bairros")</li>
+    <li>@Html.ActionLink("Posição", "Index", "Posicao")</li>
+    <li>@Html.ActionLink("Pessoa", "Index", "Pessoas")</li>
+    <li>@Html.ActionLink("Endereço", "Index", "Enderecos")</li>
+    <li>@Html.ActionLink("Tipo Cadastro", "Index", "TipoCadastro")</li>
+    <li>@Html.ActionLink("Início", "Index", "Home")</li>
+    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Fazer logoff</a></li>
+    <li>
+        @Html.ActionLink("Olá " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+    </li>
+
+</ul>
+    }
+}
+else
+{
+
+    <ul class="nav navbar-nav navbar-right">
+       <li>@Html.ActionLink("Registre-se", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Logon", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+
+

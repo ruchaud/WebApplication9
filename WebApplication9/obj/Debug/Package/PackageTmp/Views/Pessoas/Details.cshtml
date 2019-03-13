@@ -1,0 +1,138 @@
+﻿@model WebApplication9.Models.Pessoa
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pessoa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </dt>
+
+        <dd>
+            @Convert.ToDateTime(Model.data_nascimento).ToString("dd-MM-yyyy")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.profissao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.profissao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nacionalidade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nacionalidade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mae)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mae)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.data_cadastro)
+        </dt>
+
+        <dd>
+            @Convert.ToDateTime(Model.data_cadastro).ToString("dd-MM-yyyy")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_pessoa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_pessoa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpf)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero_oab)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero_oab)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Posicao.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Posicao.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TipoCadastro.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TipoCadastro.descricao)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

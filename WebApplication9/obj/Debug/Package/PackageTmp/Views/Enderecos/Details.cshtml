@@ -1,0 +1,106 @@
+﻿@model WebApplication9.Models.Endereco
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Endereco</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bairro.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bairro.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pessoa.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pessoa.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rua)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numero)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numero)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cep)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cep)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.complemento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.complemento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone_residencial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone_residencial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefone_celular)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefone_celular)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_endereco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_endereco)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.codigo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

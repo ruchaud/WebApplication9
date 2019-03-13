@@ -1,0 +1,98 @@
+﻿@model IEnumerable<WebApplication9.Models.Endereco>
+
+@{
+    ViewBag.Title = "Pesquisa de Endereço";
+}
+
+<h2>Index</h2>
+
+<p>
+
+    @Html.ActionLink("Novo",
+                              "Create",
+                              "Enderecos",
+                              htmlAttributes: new { @class = "btn btn-info" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pessoa.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.complemento)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.telefone_celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_endereco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro.descricao)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.descricao)
+        </th>
+      
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pessoa.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rua)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.complemento)
+        </td>
+       
+        <td>
+            @Html.DisplayFor(modelItem => item.telefone_celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bairro.descricao)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.descricao)
+        </td>
+       
+        <td>
+          
+            @Html.ActionLink("Edit", "Edit", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Details", "Details", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" })
+        </td>
+    </tr>
+    }
+
+</table>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+   
+    </script>

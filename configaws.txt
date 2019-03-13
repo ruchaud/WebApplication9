@@ -1,0 +1,41 @@
+# For detailed explanation of how these config files should be used and created please see the developer guide here:
+#  http://docs.amazonwebservices.com/AWSToolkitVS/latest/UserGuide/tkv-deployment-tool.html
+
+# Edit the parameter line below to set the path to the deployment archive or use
+#     /DDeploymentPackage=value
+# on the awsdeploy.exe command line for more flexibility.
+# DeploymentPackage = <-- path to web deployment archive -->
+
+# Profile name is used to look up AWS access key and secret key
+# from either the SDK credentials store, or the credentials file found at
+# <userhome-directroy>\.aws\credentials. Alternatively the access key and 
+# secret key can be set using the command line parameters /DAWSAccessKey and /DAWSSecretKey.
+AWSProfileName = ruchaud
+Region = sa-east-1
+SolutionStack = 64bit Windows Server 2016 v1.2.0 running IIS 10.0
+Template = ElasticBeanstalk
+UploadBucket = elasticbeanstalk-sa-east-1-316185349634
+
+Application.Name = WebApplication9
+
+aws:autoscaling:launchconfiguration.IamInstanceProfile = aws-elasticbeanstalk-ec2-role
+aws:autoscaling:launchconfiguration.InstanceType = t2.micro
+aws:autoscaling:launchconfiguration.SecurityGroups = sg-1fc8e967
+
+aws:ec2:vpc.Subnets = subnet-0a864851
+aws:ec2:vpc.VPCId = vpc-01abfc66
+
+aws:elasticbeanstalk:container:dotnet:apppool.Enable 32-bit Applications = False
+aws:elasticbeanstalk:container:dotnet:apppool.Target Runtime = 4.0
+
+aws:elasticbeanstalk:environment.EnvironmentType = SingleInstance
+aws:elasticbeanstalk:environment.ServiceRole = aws-elasticbeanstalk-service-role
+
+Container.ApplicationHealthcheckPath = /
+Container.Enable32BitApplications = False
+Container.InstanceType = t2.micro
+Container.TargetRuntime = 4.0
+
+Environment.CNAME = weboptima-dev
+Environment.Name = WebApplication9-dev
+

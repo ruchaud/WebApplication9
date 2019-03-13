@@ -1,0 +1,106 @@
+﻿
+    @model IEnumerable<WebApplication9.Models.Pessoa>
+
+    @{
+        ViewBag.Title = "Pesquisa de Pessoas";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Novo", "Create","Pessoas", htmlAttributes: new { @class = "btn btn-info" })
+
+    </p>
+    @using (Html.BeginForm())
+    {
+
+        <p>
+            <div class="container">
+                <div class="row">
+
+                    @Html.Label("Pesquisa por nome:", htmlAttributes: new { @class = "control-label col-md-2" })
+
+                    <div class="col-md-3">
+                        @Html.TextBox("pesquisaPorNome", null, new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" value="Pesquisa" class="btn btn-default" />
+
+                    </div>
+                </div>
+            </div>
+        </p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.data_nascimento)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnpj)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.TipoCadastro.descricao)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nome)
+                </td>
+                <td>
+                    @Convert.ToDateTime(item.data_nascimento).ToString("dd-MM-yyyy")
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.cpf)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cnpj)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoCadastro.descricao)
+                </td>
+
+                <td>
+                    <div class="container-fluid">
+                        @Html.ActionLink("Endereços",
+                                    "Index",
+                                    "Enderecos",
+                                    new { id = item.codigo },
+                                    htmlAttributes: new { @class = "btn btn-info" })
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" })
+                        @Html.ActionLink("Details", "Details", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.codigo }, htmlAttributes: new { @class = "btn btn-info" })
+
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>

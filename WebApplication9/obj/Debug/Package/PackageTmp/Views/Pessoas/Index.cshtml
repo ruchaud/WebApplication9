@@ -1,0 +1,118 @@
+﻿@model IEnumerable<WebApplication9.Models.Pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_nascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.profissao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nacionalidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mae)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.data_cadastro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_pessoa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero_oab)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Posicao.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoCadastro.descricao)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Convert.ToDateTime(item.data_nascimento).ToString("dd-MM-yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sexo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.profissao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nacionalidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mae)
+            </td>
+            <td>
+                @Convert.ToDateTime(item.data_cadastro).ToString("dd-MM-yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tipo_pessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numero_oab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Posicao.descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCadastro.descricao)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.codigo }) |
+                @Html.ActionLink("Details", "Details", new { id = item.codigo }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.codigo })
+            </td>
+        </tr>
+    }
+
+</table>
