@@ -50,9 +50,11 @@ namespace WebApplication9.Models
         public int? tipo_pessoa { get; set; }
 
         [StringLength(100)]
+
         public string cpf { get; set; }
 
         [StringLength(100)]
+
         public string cnpj { get; set; }
 
         public int? codigo_tipo_cadastro { get; set; }
